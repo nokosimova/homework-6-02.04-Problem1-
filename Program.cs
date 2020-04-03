@@ -6,12 +6,18 @@ namespace Proj1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Create class Rectangle with requiered fields and methods");
+            Console.WriteLine("-----------------------------------------------------------");
             Console.WriteLine("Enter the data of rectangle: ");
             Console.Write("length = ");
             double s1 = double.Parse(Console.ReadLine());
             Console.Write("width = ");
             double s2 = double.Parse(Console.ReadLine());
-
+            Rectangle blackrec = new Rectangle(s1, s2);
+            blackrec.AreaCalculator();
+            blackrec.PerimeterCalculator();
+            Console.WriteLine($"Area of rectangle :  {blackrec.GetArea()}");
+            Console.WriteLine($"Perimeter of rectangle :  {blackrec.GetPerimeter()}");
         }
 
         class Rectangle
@@ -37,6 +43,14 @@ namespace Proj1
                 return perimeter;
             }
 
+            public double GetArea()
+            {
+                return this.area;
+            }
+            public double GetPerimeter()
+            {
+                return this.perimeter;
+            }
         }
     }
 }
